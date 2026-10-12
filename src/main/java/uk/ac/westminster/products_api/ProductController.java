@@ -34,6 +34,6 @@ public class ProductController {
 
     @GetMapping("/search")
     public List<Product> search(String name) {
-        return productService.findByname(name);
+        return productService.findByName(name);
     }
 }
