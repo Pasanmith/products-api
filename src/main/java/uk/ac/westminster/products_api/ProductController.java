@@ -11,6 +11,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public Product getId(@PathVariable Long id){
+
         return new Product(id, "Laptop", 999.99);
     }
 }
