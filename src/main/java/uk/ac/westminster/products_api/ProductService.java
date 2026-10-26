@@ -20,7 +20,19 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return products;
     }
+
+    public Optional<Product> getProductById(Long id){
+        return products.stream().filter(p -> p.getId().equals(id)).findFirst();
+    }
+
     public Product addProduct(Product product) {
+        if (product instanceof Discountable){
+            ((DigitalProduct) product).applyDiscount(0.15);
+        } else if (product instanceof PhysicalProduct) {
+            ((PhysicalProduct)product).applyDiscount(0.13);
+
+        }
+
         product.setId(nextId++); // use the value, then add one
         products.add(product);
         return product;
