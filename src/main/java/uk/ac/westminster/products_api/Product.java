@@ -40,4 +40,5 @@ public abstract class Product {
     }
     public abstract String getSummary();
 
+    public abstract void applyDiscount(double rate);
 }

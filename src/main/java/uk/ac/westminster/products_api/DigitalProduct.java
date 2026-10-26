@@ -4,6 +4,7 @@ public class DigitalProduct extends Product{
 
     private String downloadUrl;
     private double fileSizeMB;
+    private double discountedPrice;
 
     public DigitalProduct(){
 
@@ -30,5 +31,19 @@ public class DigitalProduct extends Product{
                 + "| Price: " + getPrice()
                 + "| Url: " + downloadUrl
                 + "| File Size: " + fileSizeMB;
+    }
+
+    @Override
+    public void applyDiscount(double rate){
+        discountedPrice = getPrice() * (1 - rate);
+
+    }
+
+    public double getDiscountedPrice(){
+        return discountedPrice;
+    }
+
+    public void setDiscountedPrice(double discountedPrice){
+        this.discountedPrice = discountedPrice;
     }
 }
