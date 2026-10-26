@@ -31,4 +31,12 @@ public class PhysicalProduct extends Product{
     public void setDimensions(String dimensions) {
         this.dimensions = dimensions;
     }
+
+    @Override
+    public String getSummary(){
+        return "Product: Name: " + getName()
+                + "| Price: " + getPrice()
+                + "| Weight: " + weightKg
+                + "Dimensions: " + dimensions;
+    }
 }

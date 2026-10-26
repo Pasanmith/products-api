@@ -38,5 +38,8 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+    public String getSummary(){
+        return "Product: Name: " + name + "| Price " + price;
+    }
 
 }
